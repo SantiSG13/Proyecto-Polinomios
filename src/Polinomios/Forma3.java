@@ -20,10 +20,10 @@ public class Forma3 {
         // Recorremos de a pares: i = coef, i+1 = expo
         for (int i = 0; i < vectorResultado.length; i += 2) {
             if (vectorResultado[i] != null && !vectorResultado[i].isEmpty()) {
-                int coe= Integer.parseInt(vectorResultado[i].trim());
-                // Verificamos que i+1 exista para evitar otro IndexOutOfBounds
+                int coe = Integer.parseInt(vectorResultado[i]);
+
                 if (i + 1 < vectorResultado.length && vectorResultado[i + 1] != null && !vectorResultado[i + 1].isEmpty()) {
-                    int exp= Integer.parseInt(vectorResultado[i + 1].trim());
+                    int exp= Integer.parseInt(vectorResultado[i + 1]);
                     if (coe!= 0) {
                         InsertarTermino(coe, exp);
                     }
@@ -54,7 +54,9 @@ public class Forma3 {
                 }
                 return;
             }
-            if (actual.liga == null) break;
+            if (actual.liga == null) {
+                break;
+            }
             actual = actual.liga;
         }
 
@@ -66,7 +68,9 @@ public class Forma3 {
     // 2. Eliminar término por exponente
     // -----------------------------------------------------
     public void EliminarTermino(int expo) {
-        if (cabeza == null) return;
+        if (cabeza == null) {
+            return;
+        }
 
         // Caso especial: el primero
         if (cabeza.expo == expo) {

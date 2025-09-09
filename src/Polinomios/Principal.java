@@ -264,7 +264,9 @@ public class Principal {
     // -----------------------------------------------------
     public static String[] IngresoPolinomio() {
         String polinomioInput = JOptionPane.showInputDialog("Ingrese un polinomio (ejemplo: 2x^3+3x^4+7-8x): ");
-        if (polinomioInput == null) return new String[0];
+        if (polinomioInput == null) {
+            return new String[0];
+        }
         polinomioInput = polinomioInput.replace(" ", "");
 
         char[] vectorCaracter = polinomioInput.toCharArray();

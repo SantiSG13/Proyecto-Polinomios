@@ -216,8 +216,20 @@ public class Forma1 {
         }
         Forma1 resultado = new Forma1(gradoMax);
         for (int i = 1; i <= gradoMax + 1; i++) {
-            int coef1 = (i <= F1.getVPF1().length) ? F1.getVPF1()[i] : 0;
-            int coef2 = (i <= F2.getVPF1().length) ? F2.getVPF1()[i] : 0;
+            int coef1;
+            if (i <= F1.getVPF1().length) {
+                coef1 = F1.getVPF1()[i];
+            } else {
+                coef1 = 0;
+            }
+
+            int coef2;
+            if (i <= F2.getVPF1().length) {
+                coef2 = F2.getVPF1()[i];
+            } else {
+                coef2 = 0;
+            }
+
             resultado.getVPF1()[i] = coef1 + coef2;
         }
         return resultado;

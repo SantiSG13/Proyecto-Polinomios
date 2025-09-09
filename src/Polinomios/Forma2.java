@@ -81,9 +81,13 @@ public class Forma2 {
     // -----------------------------------------------------
     private void EliminarTerminoPorPosicion(int pos) {
         int numTerminos = VPF2[0];
-        if (numTerminos == 0) return;
+        if (numTerminos == 0) {
+            return;
+        }
         int ultimoIndiceCoef = 1 + (numTerminos - 1) * 2;
-        if (pos < 1 || pos > ultimoIndiceCoef) return; // Posición inválida
+        if (pos < 1 || pos > ultimoIndiceCoef) {
+            return; // Posición inválida
+        } 
         int[] nuevoVPF2 = new int[(numTerminos - 1) * 2 + 1];
         nuevoVPF2[0] = numTerminos - 1; // Actualizamos el número de términos
         int j = 1;
@@ -102,9 +106,9 @@ public class Forma2 {
     // -----------------------------------------------------
     private void AgregarTermino(int coef, int exp) {
         int numTerminos = VPF2[0];
-        int newNumTerminos = numTerminos + 1;
-        int[] nuevoVPF2 = new int[newNumTerminos * 2 + 1];
-        nuevoVPF2[0] = newNumTerminos; // Actualizamos el número de términos
+        int nuevoNumTerminos = numTerminos + 1;
+        int[] nuevoVPF2 = new int[nuevoNumTerminos * 2 + 1];
+        nuevoVPF2[0] = nuevoNumTerminos; // Actualizamos el número de términos
         // Copiar términos existentes (si los hay)
         for (int i = 1; i <= numTerminos * 2; i++) {
             nuevoVPF2[i] = VPF2[i];
@@ -146,7 +150,9 @@ public class Forma2 {
     // VerificarIntegridad: verifica que el vector tenga la estructura correcta
     // -----------------------------------------------------
     private boolean VerificarIntegridad() {
-        if (VPF2 == null || VPF2.length < 1) return false;
+        if (VPF2 == null || VPF2.length < 1) {
+            return false;
+        }
         int numTerminos = VPF2[0];
         int tamanosEsperado = numTerminos * 2 + 1;
         return VPF2.length == tamanosEsperado;

@@ -1,1 +1,13 @@
-/build/
+# Carpetas de IDE
+.idea/
+out/
+*.iml
+
+# Archivos de compilación
+*.class
+*.jar
+*.war
+*.ear
+
+# Archivos temporales
+*.log

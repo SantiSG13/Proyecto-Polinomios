@@ -1,1 +1,27 @@
-/build/
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# NetBeans
+nbproject/private/
+dist/
+out/
+manifest.mf
+
+# Archivos de compilación
+*.class
+*.jar
+*.war
+*.ear
+
+# Carpetas de salida
+/out/
+/target/
+/bin/
+
+# Logs y temporales
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db

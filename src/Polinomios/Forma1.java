@@ -73,6 +73,9 @@ public class Forma1 {
         if (pos >= 1 && pos < VPF1.length) {
             VPF1[pos] += coe;
         }
+        if (VPF1[pos] == 0 && exp == grado) {
+            ReducirGrado();
+        }
     }
 
     // -----------------------------------------------------

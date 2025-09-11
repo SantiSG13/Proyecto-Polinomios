@@ -70,7 +70,7 @@ public class Forma2 {
                 if (VPF2[i] == 0) {
                     EliminarTerminoPorPosicion(i); // Eliminar el término si el coeficiente es cero
                 }
-                return;
+                return; // Salir después de actualizar
             }
         }
         AgregarTermino(coef, exp);
@@ -125,9 +125,6 @@ public class Forma2 {
     // OrdenarTerminos: ordena los términos de mayor a menor exponente
     // -----------------------------------------------------
     private void OrdenarTerminos() {
-        if (!VerificarIntegridad()) {
-            return;
-        }
         int numTerminos = VPF2[0];
         // Metodo burbuja para ordenar de mayor a menor exponente
         for (int i = 1; i <= 1 + (numTerminos - 1) * 2; i += 2) {
@@ -144,18 +141,6 @@ public class Forma2 {
                 }
             }
         }
-    }
-
-    // -----------------------------------------------------
-    // VerificarIntegridad: verifica que el vector tenga la estructura correcta
-    // -----------------------------------------------------
-    private boolean VerificarIntegridad() {
-        if (VPF2 == null || VPF2.length < 1) {
-            return false;
-        }
-        int numTerminos = VPF2[0];
-        int tamanosEsperado = numTerminos * 2 + 1;
-        return VPF2.length == tamanosEsperado;
     }
 
     // -----------------------------------------------------

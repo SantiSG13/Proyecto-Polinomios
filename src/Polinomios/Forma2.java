@@ -114,7 +114,7 @@ public class Forma2 {
             nuevoVPF2[i] = VPF2[i];
         }
         // Agregar nuevo término al final (posición correcta)
-        int insertPos = 1 + numTerminos * 2;
+        int insertPos = 1 + numTerminos * 2; // posición para el nuevo término
         nuevoVPF2[insertPos] = coef;
         nuevoVPF2[insertPos + 1] = exp;
         VPF2 = nuevoVPF2;
@@ -127,8 +127,8 @@ public class Forma2 {
     private void OrdenarTerminos() {
         int numTerminos = VPF2[0];
         // Metodo burbuja para ordenar de mayor a menor exponente
-        for (int i = 1; i <= 1 + (numTerminos - 1) * 2; i += 2) {
-            for (int j = 1; j <= 1 + (numTerminos - 1) * 2 - 2; j += 2) {
+        for (int i = 1; i <= 1 + (numTerminos - 1) * 2; i += 2) { //  Controla cuántas pasadas completas se hacen sobre el arreglo
+            for (int j = 1; j <= 1 + (numTerminos - 1) * 2 - 2; j += 2) { // En cada pasada, compara elementos adyacentes e intercambia si es necesario
                 if (VPF2[j + 1] < VPF2[j + 3]) {
                     // Intercambiar coeficientes
                     int tempCoe = VPF2[j];
@@ -220,7 +220,7 @@ public class Forma2 {
             int exp = VPF2[i + 1];
             int potencia = 1;
             for (int j = 0; j < exp; j++) {
-                potencia *= x;
+                potencia = potencia * x;
             }
             resultado += coef * potencia;
         }
@@ -234,9 +234,10 @@ public class Forma2 {
         int maxTerminos = F2.getVPF2()[0] + F2_2.getVPF2()[0];
         Forma2 resultado = new Forma2(maxTerminos);
         resultado.getVPF2()[0] = 0;  // Inicializar en 0 términos
+
         // Agregar términos del primer polinomio
-        int last1 = 1 + (F2.getVPF2()[0] - 1) * 2;
-        for (int i = 1; i <= last1; i += 2) {
+        int ultimoIndiceCoef1 = 1 + (F2.getVPF2()[0] - 1) * 2; //
+        for (int i = 1; i <= ultimoIndiceCoef1; i += 2) {
             int coef = F2.getVPF2()[i];
             int exp = F2.getVPF2()[i + 1];
             if (coef != 0) {
@@ -244,8 +245,8 @@ public class Forma2 {
             }
         }
         // Agregar términos del segundo polinomio
-        int last2 = 1 + (F2_2.getVPF2()[0] - 1) * 2;
-        for (int i = 1; i <= last2; i += 2) {
+        int ultimoIndiceCoef2 = 1 + (F2_2.getVPF2()[0] - 1) * 2;
+        for (int i = 1; i <= ultimoIndiceCoef2; i += 2) {
             int coef = F2_2.getVPF2()[i];
             int exp = F2_2.getVPF2()[i + 1];
             if (coef != 0) {

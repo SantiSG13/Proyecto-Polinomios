@@ -286,11 +286,6 @@ public class Forma1 {
         }
         Forma1 resultado = new Forma1(gradoMax);
 
-        // Inicializar coefs en 0
-        for (int i = 1; i < resultado.getVPF1().length; i++) {
-            resultado.setVPF1(i, 0);
-        }
-
         // Multiplicar cada término de Forma3 por cada de Forma2
         actual3 = f3.cabeza;
         while (actual3 != null) {
